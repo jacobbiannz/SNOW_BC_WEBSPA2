@@ -1,0 +1,32 @@
+@import '../../variables';
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(41, 41, 41, 0.8);
+    //color:white;
+   
+    .footer{
+        max-width: $media-screen-m;
+        width: $media-screen-m;
+        margin: auto;
+        height: 10%;
+        line-height: 60px;
+        color:white;
+       
+    } 
+
+    .container{
+        
+        margin: 5% auto;
+       
+        padding-left: 16px;
+        padding-right: 16px;
+
+
+        .socialmedia{
+            text-align:center;
+        }
+    }
+}

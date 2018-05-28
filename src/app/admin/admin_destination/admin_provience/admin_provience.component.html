@@ -1,0 +1,90 @@
+<section class="admincities">
+    <div>
+        <h3><b>City</b></h3>
+        <hr>
+    </div>
+    
+    <div>
+        <div class="row">
+            <div class="col-md-3 firstColumn">
+                
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Country</label>
+                    <select  #selectElemCountry class="form-control" ng-model="selectedCountry" (change)="onChangeCountry(selectElemCountry.value)" id="exampleFormControlSelect1">
+                        <option [value]="country.id" *ngFor="let country of countries">{{country.name | uppercase}}</option>
+                    </select>
+                </div> 
+                
+                <!-- <div class="form-group">
+                    <label for="exampleFormControlSelect2">Provience</label>
+                    <select #selectElemProvience class="form-control" (change)="onChangeProvience(selectElemProvience.value)" id="exampleFormControlSelect2">
+                        <option [value]="provience.id" *ngFor="let provience of proviences">{{provience.name | uppercase}}</option>
+                    </select>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect3">Provience</label>
+                    <select multiple #selectElemProvience class="form-control" (click)="onSelectProvience(selectElemProvience.value)" id="exampleFormControlSelect3">
+                        <option [value]="provience.id" *ngFor="let provience of proviences">{{provience.name | uppercase}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div *ngIf="selectedProvience || newProvience" >
+    
+                    <!-- &nbsp; -->
+                    <!-- <h3>Editing: {{selectedCountry.name}}</h3> -->
+                    <admin-proviencedetail [provience]="selectedProvience" [countryId]="selectedCountryId" (onUpdate)="onRefresh($event)"></admin-proviencedetail>
+                
+                
+                    <!-- <p>heroForm value: {{ selectedCountry | json}} + {{now}}</p> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <div class="container">
+            
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a *ngFor="let country of countries; let isFirst = first" 
+                    (click)="onSelectCountry(country)"
+                    class="nav-item nav-link local-nav-link" 
+                    [class.active]="country.id==selectedCountry.id" 
+                    data-toggle="tab" role="tab">
+                    <h6>{{country.name | uppercase}}</h6>
+                </a>    
+                
+                <a class="nav-item nav-link local-nav-link addbutton" data-toggle="tab" role="tab">
+                    <button type="button" class="btn btn-dark" (click)="createNewCountry()">ADD</button>
+                </a>           
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">   
+        <div *ngIf="selectedCountry || newCountry" >
+        
+            &nbsp;
+           
+            <admin-countrydetail [country]="selectedCountry" (onUpdate)="onRefresh($event)"></admin-countrydetail>
+        
+        
+           
+        </div>
+        </div>
+    </div> -->
+
+     <!-- <p>heroForm value: {{ selectedCountry | json}} + {{now}}</p> -->
+</section>
+    
+        
+    
+    
+    
+       
+        
+            
+          

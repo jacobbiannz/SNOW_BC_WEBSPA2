@@ -1,0 +1,234 @@
+@import '../../variables';
+   
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    
+    > .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+} 
+ 
+.destjumbo{
+    @include aspect-ratio(16, 7);
+
+    .txt{
+        color : white;
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        width: 40%;
+        word-wrap: break-word;
+        transform: translate(0%, -50%);
+        margin: auto;
+    }
+}
+
+.desttitle{
+    //display: flex;
+    //margin: auto;
+    text-align: center;
+    //display: block;
+    padding:32px;  
+    h3{
+        color: gray;
+    }
+}
+
+.destwide{
+     //max-width: $media-screen-m;
+    //margin: auto;
+    // align-items: center;
+    // justify-content: center;
+    // background-color: transparent;
+    // border : 0px;
+}
+
+.distsectiondiv{
+    border-width: 1px gray;
+    margin:0px;
+}
+
+.destcity{
+    padding-bottom: 32px;
+
+    .destcitycolumn1{
+        //padding-left: 16px;
+        //padding-right: 16px;
+        //background-color: pink;
+        //background: #2c3e50;
+        -webkit-columns: $media-screen-xxs 2;
+        -moz-columns: $media-screen-xxs 2;
+        columns: $media-screen-xxs 2;
+        
+        -moz-column-fill: balance;
+        column-fill: balance;
+
+        -webkit-column-gap: 16px;
+        -moz-column-gap: 16px;
+        column-gap: 16px;
+
+        //-webkit-column-rule: 1px solid #1a242f;
+        //-moz-column-rule: 1px solid #1a242f;
+       //column-rule: 1px solid #1a242f;
+    }
+
+    .destcityrow{
+        //display: flex;
+        //margin: auto;  
+
+        .destcitycolumn1{
+            //padding-left: 16px;
+            //padding-right: 16px;
+            //background-color: pink;
+        }
+    
+        .destcitycolumn2{
+            //padding-left: 16px;
+            //padding-right: 16px;
+            //background-color: paleturquoise; 
+        }
+
+        .table{ 
+            .btn-link{
+                color: gray;
+            }
+
+            th{ 
+                //width: 20%;
+                .btn-link{
+                    font-weight: Bold;
+                }
+               //padding-left: 0;
+               //padding-right: 0;
+           }
+           td{
+               //padding-left: 0;
+               //padding-right: 0;
+           }
+       }
+
+       
+    }
+}
+
+
+
+.distmonth{
+    background: $gray-100;
+    padding-bottom: 32px;
+    
+    .card{
+        background: transparent;
+        border: none;
+    }
+
+    // .cardmenu{
+    //     text-align: center;
+    // }
+
+    .nav-pills{
+        text-align: center !important;
+        margin: auto;
+    }
+
+    
+    .nav-item{
+       padding : 0px 16px;
+       display: inline-block;
+
+       .nav-link{
+            padding: 0px 0px;
+            color: gray;
+       }
+       
+       .active{
+            color: orange;
+            background-color: transparent;
+        }
+   
+       hr{
+           border-top: 0px;
+       }
+       .active hr{
+            border-top: 3px solid orange;
+           
+        }
+
+        h6{
+            font-weight: Bold;    
+        }
+          
+    }
+
+    .tab-content{
+        //width: 100%;
+        //padding: 16px;
+    }
+
+  
+    .row{
+       //flex-wrap: nowrap;
+    }
+
+    .col-md-3{
+       
+        @include aspect-ratio(1, 1);       
+        .image{
+            margin : 2%;   
+        }
+    }
+   
+    .col-md-4{
+        
+        @include aspect-ratio(4, 3);
+        .image{
+            margin : 2%;
+        }
+    }
+    
+    .monthcitytxt{
+        color : white;
+        position: absolute;
+        //top: 50%;
+        left: 5%;
+        bottom: 1%;
+        //padding-left: 8px;
+        //padding-bottom: 32px;
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        word-wrap: break-word;
+        transform: translate(0%, -50%);
+    }
+    
+}
+
+
+//---------------
+.disttopic{
+    
+    padding-bottom: 32px;
+
+    .row{
+        flex-wrap: nowrap;
+     }
+
+    .col-md-3{
+        @include aspect-ratio(1, 1);
+        .image{
+            margin : 2%;
+            }
+    }
+   
+}

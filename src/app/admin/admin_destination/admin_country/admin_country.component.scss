@@ -1,0 +1,52 @@
+@import '../../../variables';
+
+a{
+    cursor: pointer; 
+    color: white;
+}
+
+.local-nav-link.active h6{
+    
+        //color: white !important;
+        //background-color: $gray-500 !important;
+    
+ }
+
+ .nav-tabs{
+     //display: flex;
+     .addbutton{
+        font-weight: bold;
+     }
+ }
+
+
+
+h6{
+    font-weight: bold;
+    padding: 8px;
+}
+
+.table{ 
+    .btn-link{
+        color: gray;
+    }
+
+   
+    tr:first-child{ 
+        th,td{border-top: 0px;}  
+    }
+
+    th{ 
+        //width: 20%;
+        .btn-link{
+            font-weight: Bold;
+        }
+        
+        //padding-left: 0;
+        //padding-right: 0;
+    }
+    td{
+        //padding-left: 0;
+        //padding-right: 0;
+    }
+}

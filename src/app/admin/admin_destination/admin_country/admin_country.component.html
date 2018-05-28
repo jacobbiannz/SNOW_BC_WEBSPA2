@@ -1,0 +1,54 @@
+<!-- <div class="index">
+    <div class="index-inner">
+        <div *ngIf="countries">
+            <h6><li *ngFor="let country of countries" >{{country.name}}</li></h6>
+        </div> 
+    </div>
+</div> -->
+
+<section class="admincountries">
+    <div>
+        <h3><b>Country</b></h3>
+        <hr>
+    </div>
+
+    <div>
+            <!-- <a *ngFor="let country of countries" (click)="select(country)">{{country.name}}</a> -->
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a *ngFor="let country of countries; let isFirst = first" 
+                    (click)="onSelectCountry(country)"
+                    class="nav-item nav-link local-nav-link" 
+                    [class.active]="country.id==selectedCountry.id" 
+                    data-toggle="tab" role="tab">
+                    <h6>{{country.name | uppercase}}</h6>
+                </a>    
+                
+                <a class="nav-item nav-link local-nav-link addbutton" *ngIf="countries" data-toggle="tab" role="tab">
+                    <button type="button" class="btn btn-dark" (click)="createNewCountry()">ADD</button>
+                </a>           
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">   
+            <div *ngIf="selectedCountry || newCountry" >
+            
+                &nbsp;
+                <!-- <h3>Editing: {{selectedCountry.name}}</h3> -->
+                <admin-countrydetail [country]="selectedCountry" (onUpdate)="onRefresh($event)"></admin-countrydetail>
+            
+            
+                <!-- <p>heroForm value: {{ selectedCountry | json}} + {{now}}</p> -->
+            </div>
+        </div>
+    </div>
+</section>
+    
+        
+    
+    
+    
+       
+        
+            
+          

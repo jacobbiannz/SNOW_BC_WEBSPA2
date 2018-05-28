@@ -1,0 +1,242 @@
+<section class="destjumbo">
+    <div class="image">
+        <img class="d-inline-block w-100" src="assets/images/D_Slider1.jpg" alt="Third slide">
+    
+        <div class="txt d-none d-md-block">
+            <h1>Top Destination - Editor Choise</h1>
+            
+            <h5>
+                example example example example example example 
+            </h5>
+            
+            <h3>
+                read article
+            </h3>
+        </div>
+    
+    </div>    
+</section> 
+
+    
+<section class="destcity">
+    <div class="container destwide">
+        <div class="desttitle">
+            <h3>Top Destination</h3>
+        </div>
+        
+        <!-- <div class="destcitycolumn1">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let provience of proviences" >
+                        <th>
+                            <a class="btn btn-link"  routerLink="/country/{{selectedCountry.id}}/provience/{{provience.id}}">{{provience.name}}</a>
+                        </th>
+                        <td>
+                            <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/home">{{city.name}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>      
+        </div> -->
+
+        <div class="row destcityrow">
+
+            <!-- detail list -->
+            <!-- <div class="col-md-6 destcitycolumn1 list-group">
+                <dl *ngFor="let provience of proviences1">
+                    <dt>
+                        <a class="btn btn-link"  routerLink="/country/{{selectedCountry.id}}/provience/{{provience.id}}">{{provience.name}}</a>
+                    </dt>
+                    <dd>
+                        <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/home">{{city.name}}</a>
+                    </dd>
+                </dl>   
+            </div>
+
+            <div class="col-md-6 destcitycolumn2 list-group">     
+                <dl *ngFor="let provience of proviences2">
+                    <dt>
+                        <a class="btn btn-link"  routerLink="/country/{{selectedCountry.id}}/provience/{{provience.id}}">{{provience.name}}</a>
+                    </dt>
+                    <dd>
+                        <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/home">{{city.name}}</a>
+                    </dd>
+                </dl>     
+            </div>  -->
+
+            <!-- table -->
+            <div class="col-md-6 destcitycolumn1 list-group">
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let provience of proviences1" >
+                            <th>
+                                <a class="btn btn-link"  routerLink="/country/{{selectedCountry.id}}/provience/{{provience.id}}">{{provience.name}}</a>
+                            </th>
+                            <td>
+                                <!-- <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/country/{{selectedCountry.id}}/provience-c/{{provience.id}}/city/{{city.id}}">{{city.name}}</a> -->
+                                <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/cities/{{city.id}}">{{city.name}}</a>
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>        
+            </div>
+
+            <div class="col-md-6 destcitycolumn2 list-group">     
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let provience of proviences2" >
+                            <th>
+                                <a class="btn btn-link" routerLink="/country/{{selectedCountry.id}}/provience/{{provience.id}}">{{provience.name}}</a>
+                            </th>
+                            <td>
+                                <!-- <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/country/{{selectedCountry.id}}/provience-c/{{provience.id}}/city/{{city.id}}">{{city.name}}</a> -->
+                                <a class="btn btn-link" *ngFor="let city of provience.cities" routerLink="/cities/{{city.id}}">{{city.name}}</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>     
+            </div> 
+
+        </div>
+    </div>
+</section>
+
+<hr class="distsectiondiv">
+
+<section class="distmonth">
+    
+    <div class="container destwide">
+        <div class="desttitle">
+            <h3>Season Suggestions</h3>
+        </div>
+
+        <div class="card">
+            
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                
+                <li class="nav-item" *ngFor="let month of months; let isFirst = first" >     
+                    <a class="nav-link" 
+                        [class.active]="isFirst" 
+                        [attr.id]="'pills-' + month.id + '-tab'" 
+                        [attr.href]="'#pills-' + month.id" 
+                        data-toggle="pill" role="tab" aria-controls="pills-home" aria-selected="true"><h6>{{month.name | slice:0:3 | uppercase}}</h6><hr></a>
+                </li>
+            </ul>
+       
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show" *ngFor="let month of months; let isFirst = first"
+                        [class.active]="isFirst" 
+                        [attr.id]="'pills-' + month.id"  
+                        role="tabpanel" aria-labelledby="pills-home-tab" >
+
+                    <div class=".container">
+                            <div class="row">
+                                <div class="col-md-4" *ngFor="let city of month.topCities">
+                                    <div class="image">
+                                        <img class="h-100" src= "http://localhost:61125/api/images/{{city.mainImageId}}" alt="picture----">
+                                        <div class="monthcitytxt d-inline-block">{{city.name}}</div>
+                                    </div>                                
+                                </div>                                  
+                            </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<hr class="distsectiondiv">
+
+<div class="disttopic">
+    
+        <div class="container destwide">
+            <div class="desttitle">
+                <h3>Topic Suggestions</h3>
+            </div>
+        
+            <div class="text-center destwide">
+            <!-- -------------------------------------------------------- -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+            </div>
+          
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="image">
+                        <img class="h-100 d-inline-block" src="assets/images/D_Slider1.jpg" alt="Third slide">
+                    </div>    
+                </div>
+            </div>
+            <!-- -------------------------------------------------------- -->
+            </div>
+
+
+
+        
+        </div>
+
+</div>
+
+

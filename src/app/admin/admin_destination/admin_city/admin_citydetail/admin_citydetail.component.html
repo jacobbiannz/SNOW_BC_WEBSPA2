@@ -1,0 +1,38 @@
+﻿<form [formGroup]="cityForm" (ngSubmit)="onSubmit()" novalidate>
+    
+
+    <!-- Hero Detail Controls -->
+    <div class="form-group">
+        <label class="center-block">
+            Name:
+            <input class="form-control" formControlName="name">
+        </label>
+    </div> 
+    
+    <div class="form-group">
+        <label class="center-block">
+            Rate:
+            <input class="form-control" formControlName="rate">
+        </label>
+        
+    </div> 
+
+    <div style="margin-bottom: 1em">
+        <button type="submit"
+                [disabled]="cityForm.pristine" class="btn btn-dark">
+            Save
+        </button>
+         &nbsp;
+        <button type="reset" (click)="revert($event)"
+                [disabled]="cityForm.pristine" class="btn btn-secondary">
+            Revert
+        </button>
+    </div>
+</form>
+
+<!-- <p>countryForm value: {{ countryForm.value | json}}</p> -->
+
+<!--
+<h4>Name change log</h4>
+<div *ngFor="let name of nameChangeLog">{{name}}</div>
+-->

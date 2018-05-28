@@ -1,0 +1,76 @@
+ <div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light">
+
+        <a class="navbar-brand" href="#">
+            <img src="../../../assets/images/logo.png" class="rounded" height="60" width="auto" alt="BC">
+        </a>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto">
+            
+                <!-- <a class="nav-item nav-link" href="#"> Home </a> -->
+                <a routerLink="/home" [routerLinkActive]="['router-link-active']" class="nav-item nav-link">
+                    {{ 'Home' }}
+                </a>
+
+                <a routerLink="/destination" [routerLinkActive]="['router-link-active']" class="nav-item nav-link">
+                    {{ 'Destinations' }}
+                </a>
+                
+                <a class="nav-item nav-link" href="#"> Shop </a>
+            
+                <a class="nav-item nav-link" href="#"> Place </a>
+
+                <a class="nav-item nav-link" href="#"> APP </a>
+            </div>       
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only">(current)</span>
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Action2</a>
+                    <a class="dropdown-item" href="#">Action3</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Action-</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i> BC <b class="caret"></b>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> BC <b class="caret"></b>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Profile1</a>
+                    <a class="dropdown-item" href="#">Settings1</a>
+                    <a class="dropdown-item" href="#">settiing2</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+            </li>
+        </ul> -->
+    </nav> 
+</div>
